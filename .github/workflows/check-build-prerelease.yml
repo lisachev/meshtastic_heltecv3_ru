@@ -63,6 +63,7 @@ jobs:
         if: steps.check_release.outputs.skip_build == 'false'
         run: |
           sed -i '/-I variants\/esp32s3\/heltec_v3/a\  -D OLED_RU' firmware/variants/esp32s3/heltec_v3/platformio.ini
+          cat firmware/variants/esp32s3/heltec_v3/platformio.ini
       
       - name: Build Heltec V3 firmware
         if: steps.check_release.outputs.skip_build == 'false'
